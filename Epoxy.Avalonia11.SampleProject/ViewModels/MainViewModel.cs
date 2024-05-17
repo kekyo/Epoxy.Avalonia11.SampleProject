@@ -39,12 +39,20 @@ public class MainViewModel
         return default;
     }
 
+    [PropertyChanged(nameof(SelectedIndex))]
+    private ValueTask OnSelectedIndexChangedAsync(int newIndex)
+    {
+        this.CanRemove = newIndex >= 0;
+        return default;
+    }
+
 #pragma warning disable CA1822 // Mark members as static
     public Well<UserControl> MainViewWell { get; } = Well.Factory.Create<UserControl>();
     public Command FireAdd { get; }
     public Command FireRemove { get; }
 
     public bool CanRemove { get; private set; }
+    public int SelectedIndex { get; set; }
     public string EnteringText { get; set; } = "";
     public int EnteringTextLength { get; private set; }
     public ObservableCollection<ItemViewModel> Items { get; } = new();
