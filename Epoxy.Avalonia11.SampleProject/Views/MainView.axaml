@@ -24,6 +24,11 @@
       <TextBlock Text="{Binding EnteringTextLength}"/>
     </StackPanel>
     <ListBox Margin="0,10,0,0" ItemsSource="{Binding Items}">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <TextBlock Foreground="Yellow" Text="{Binding Text}"/>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
     </ListBox>
   </StackPanel>
 </UserControl>
