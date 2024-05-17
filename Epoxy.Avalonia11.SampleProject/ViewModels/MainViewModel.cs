@@ -28,6 +28,7 @@ public class MainViewModel
 
         this.FireRemove = Command.Factory.Create(() =>
         {
+            this.Items.RemoveAt(this.SelectedIndex);
             return default;
         });
     }
