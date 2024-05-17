@@ -10,7 +10,7 @@ public class MainViewModel
     {
         this.MainViewWell.Add(Control.LoadedEvent, () =>
         {
-            this.EnteringTextLength = 0;
+            this.EnteringText = "Enter your text";
             return default;
         });
     }
