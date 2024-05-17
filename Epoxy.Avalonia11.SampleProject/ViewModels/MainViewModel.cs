@@ -17,6 +17,12 @@ public class MainViewModel
 
         this.FireAdd = Command.Factory.Create(() =>
         {
+            var item = new ItemViewModel
+            {
+                Text = this.EnteringText,
+            };
+            this.Items.Add(item);
+
             return default;
         });
     }
@@ -41,4 +47,5 @@ public class MainViewModel
 [ViewModel]
 public class ItemViewModel
 {
+    public string? Text { get; set; }
 }
