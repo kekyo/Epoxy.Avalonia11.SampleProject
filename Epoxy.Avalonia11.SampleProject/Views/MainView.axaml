@@ -15,7 +15,10 @@
   </Design.DataContext>
 
   <StackPanel>
-    <TextBox Text="{Binding EnteringText}" />
+    <StackPanel Orientation="Horizontal">
+      <TextBox Text="{Binding EnteringText}" />
+      <Button Content="Add" Command="{Binding FireAdd}" />
+    </StackPanel>
     <StackPanel Orientation="Horizontal">
       <TextBlock Text="Length:" />
       <TextBlock Text="{Binding EnteringTextLength}"/>
