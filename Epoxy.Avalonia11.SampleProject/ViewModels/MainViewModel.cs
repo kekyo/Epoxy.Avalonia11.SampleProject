@@ -13,6 +13,11 @@ public class MainViewModel
             this.EnteringText = "Enter your text";
             return default;
         });
+
+        this.FireAdd = Command.Factory.Create(() =>
+        {
+            return default;
+        });
     }
 
     [PropertyChanged(nameof(EnteringText))]
@@ -24,6 +29,7 @@ public class MainViewModel
 
 #pragma warning disable CA1822 // Mark members as static
     public Well<UserControl> MainViewWell { get; } = Well.Factory.Create<UserControl>();
+    public Command FireAdd { get; }
     
     public string EnteringText { get; set; } = "";
     public int EnteringTextLength { get; private set; }
