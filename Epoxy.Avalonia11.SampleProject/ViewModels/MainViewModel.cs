@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
 namespace Epoxy.Avalonia11.SampleProject.ViewModels;
@@ -33,5 +34,11 @@ public class MainViewModel
     
     public string EnteringText { get; set; } = "";
     public int EnteringTextLength { get; private set; }
+    public ObservableCollection<ItemViewModel> Items { get; } = new();
 #pragma warning restore CA1822 // Mark members as static
+}
+
+[ViewModel]
+public class ItemViewModel
+{
 }
