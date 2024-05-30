@@ -1,4 +1,4 @@
-﻿using Avalonia.Controls;
+using Avalonia.Controls;
 
 namespace Epoxy.Avalonia11.SampleProject.ViewModels;
 
@@ -9,14 +9,15 @@ public class MainViewModel
     {
         this.MainViewWell.Add(Control.LoadedEvent, () =>
         {
-            this.Greeting = "Welcome to Avalonia!";
+            this.EnteringTextLength = 0;
             return default;
         });
     }
 
 #pragma warning disable CA1822 // Mark members as static
-    public string? Greeting { get; private set; }
-
     public Well<UserControl> MainViewWell { get; } = Well.Factory.Create<UserControl>();
+    
+    public string EnteringText { get; set; } = "";
+    public int EnteringTextLength { get; private set; }
 #pragma warning restore CA1822 // Mark members as static
 }
