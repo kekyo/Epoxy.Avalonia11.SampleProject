@@ -14,5 +14,11 @@
     <vm:MainViewModel />
   </Design.DataContext>
 
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+  <StackPanel>
+    <TextBox Text="{Binding EnteringText}" />
+    <StackPanel Orientation="Horizontal">
+      <TextBlock Text="Length:" />
+      <TextBlock Text="{Binding EnteringTextLength}"/>
+    </StackPanel>
+  </StackPanel>
 </UserControl>
