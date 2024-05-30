@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using System.Threading.Tasks;
 
 namespace Epoxy.Avalonia11.SampleProject.ViewModels;
 
@@ -12,6 +13,13 @@ public class MainViewModel
             this.EnteringTextLength = 0;
             return default;
         });
+    }
+
+    [PropertyChanged(nameof(EnteringText))]
+    private ValueTask OnEnteringTextChangedAsync(string newText)
+    {
+        this.EnteringTextLength = newText.Length;
+        return default;
     }
 
 #pragma warning disable CA1822 // Mark members as static
