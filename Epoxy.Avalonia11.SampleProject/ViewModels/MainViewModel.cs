@@ -25,6 +25,11 @@ public class MainViewModel
 
             return default;
         });
+
+        this.FireRemove = Command.Factory.Create(() =>
+        {
+            return default;
+        });
     }
 
     [PropertyChanged(nameof(EnteringText))]
@@ -37,7 +42,9 @@ public class MainViewModel
 #pragma warning disable CA1822 // Mark members as static
     public Well<UserControl> MainViewWell { get; } = Well.Factory.Create<UserControl>();
     public Command FireAdd { get; }
-    
+    public Command FireRemove { get; }
+
+    public bool CanRemove { get; private set; }
     public string EnteringText { get; set; } = "";
     public int EnteringTextLength { get; private set; }
     public ObservableCollection<ItemViewModel> Items { get; } = new();

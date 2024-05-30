@@ -18,6 +18,7 @@
     <StackPanel Orientation="Horizontal">
       <TextBox Text="{Binding EnteringText}" />
       <Button Content="Add" Command="{Binding FireAdd}" />
+      <Button Content="Remove" IsEnabled="{Binding CanRemove}" Command="{Binding FireRemove}" />
     </StackPanel>
     <StackPanel Orientation="Horizontal">
       <TextBlock Text="Length:" />
